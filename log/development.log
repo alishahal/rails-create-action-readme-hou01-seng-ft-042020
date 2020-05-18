@@ -40,3 +40,185 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-05-18 20:35:55.003951"], ["updated_at", "2020-05-18 20:35:55.003951"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-05-18 15:45:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (6.3ms)
+Completed 200 OK in 45ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-18 15:45:52 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 649ms (Views: 627.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-18 15:46:18 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEpGAddyIy+FBNfLEI1nvv6eKZVWzFBCOJ1JOpOxM6fz5/E9l7onK4+SbuwhX9KvV9m/Y4uutRsPAkdXAqqEtw==", "title"=>"None", "description"=>"None realy", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (40.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "None"], ["description", "None realy"], ["created_at", "2020-05-18 20:46:18.064613"], ["updated_at", "2020-05-18 20:46:18.064613"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 159ms (ActiveRecord: 50.3ms)
+
+
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for ::1 at 2020-05-18 15:56:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 472ms (Views: 427.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-18 15:57:04 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-18 15:57:12 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (16.3ms)
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/post.new" for ::1 at 2020-05-18 15:57:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/post.new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.2) lib/rack/handler/webrick.rb:95:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered collection of /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (21.5ms)
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.1ms)
+  Rendering /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (148.3ms)
+Started GET "/post/new" for ::1 at 2020-05-18 15:57:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/post/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.2) lib/rack/handler/webrick.rb:95:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered collection of /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (6.5ms)
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendering /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Library/Ruby/Gems/2.6.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (77.6ms)
+Started GET "/posts/new" for ::1 at 2020-05-18 15:57:43 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 64ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-18 15:57:57 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RAJo3YSChPtvrprXV3N237XIbS8iopbSvv2mjXf8lborr9/hxEqA/2U4I/BmocPOHI/72f/Ac4uJYqjg5uciqg==", "title"=>"Hi", "description"=>"Hello", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hi"], ["description", "Hello"], ["created_at", "2020-05-18 20:57:57.745758"], ["updated_at", "2020-05-18 20:57:57.745758"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 18ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2020-05-18 15:57:57 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 121ms (Views: 98.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-18 15:58:10 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-18 15:58:23 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fHdS6HkqFQpc2YaxscKN1pIXXpVJP0ode9uk4hONF70T2uXUOeIRDlZPP5aAEDjHO1DIY5Rdr0RMRKqPgpagrQ==", "title"=>"Why", "description"=>"Why are you?", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Why"], ["description", "Why are you?"], ["created_at", "2020-05-18 20:58:23.617841"], ["updated_at", "2020-05-18 20:58:23.617841"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 12ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/posts/5" for ::1 at 2020-05-18 15:58:23 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 91ms (Views: 86.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5" for ::1 at 2020-05-18 15:58:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
